@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about Book Haven Bookstore.">
+    <title>Book Haven Bookstore | About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styling the business hours table for uniformity */
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        table td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        table tr:last-child td {
+            border-bottom: none; /* Remove border from last row */
+        }
+        table td:first-child {
+            font-weight: bold;
+        }
+        /* Simple styling for the subscribe button */
+        .newsletter input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .newsletter button {
+            padding: 10px 15px;
+            background-color: #131C26; /* Bookish Black */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .newsletter button:hover {
+            background-color: #EE583F; /* Intensity Indigo */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <a href="index.html"><img src="assets/Client3_LogoPalette1_EE583F.png" alt="Book Haven Bookstore Logo" class="logo"></a>
+            <h1>Book Haven Bookstore</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="community.html">Community Corner</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="about-us">
+            <h2>About Book Haven Bookstore</h2>
+            <p>Welcome to Book Haven! We are your local bookstore, offering a curated selection of books for readers of all ages and interests. Our mission is to foster a love of reading and create a community space for book enthusiasts. Whether you’re looking for the latest bestseller or a rare gem, Book Haven is here to help.</p>
+
+            <h3>Our Business Hours:</h3>
+            <!-- Updated table layout for business hours -->
+            <table>
+                <tr>
+                    <td>Monday - Friday:</td>
+                    <td>9:00 AM - 8:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday:</td>
+                    <td>10:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Sunday:</td>
+                    <td>12:00 PM - 5:00 PM</td>
+                </tr>
+            </table>
+        </section>
+
+    <!-- Contact Us Section -->
+        <section class="contact-us">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="message">Your Message / Custom Order:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <label for="custom-order">
+                    <input type="checkbox" id="custom-order" name="custom-order"> Is this a custom order?
+                </label>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Clear Form</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+         <div class="container">
+            <div class="newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <input type="email" id="footer-newsletter-email" placeholder="Enter your email">
+                <button id="footer-subscribe-btn">Subscribe</button>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="assets/facebook_Icon.png" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="assets/Instagram_Icon.png" alt="Instagram" class="social-icon"></a>
+                <a href="#"><img src="assets/twitter_icon.png" alt="Twitter" class="social-icon"></a>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="community.html">Community Corner</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+
+    <!-- Link JavaScript -->
+    <script src="main.js"></script>
+
+
+
+
+</body>
+</html>

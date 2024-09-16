@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse Book Haven's collection of books and merchandise.">
+    <title>Book Haven Bookstore | Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <a href="index.html"><img src="assets/Client3_LogoPalette1_EE583F.png" alt="Book Haven Bookstore Logo" class="logo"></a>
+            <h1>Book Haven Bookstore</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="community.html">Community Corner</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <h2>Book Gallery</h2>
+        <p>Explore our collection of books and merchandise; more are coming soon.</p>
+        
+
+        <!-- Cart Section -->
+        <div class="cart-section">
+            <h2>Your Shopping Cart</h2>
+            <button id="view-cart-btn" onclick="viewCart()">View Cart</button>
+            <button id="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+            <button id="process-order-btn" onclick="processOrder()">Process Order</button>
+        </div>
+
+        <!-- Gallery Grid for Books -->
+        <section class="gallery book-grid">
+            <div class="book-item">
+                <img src="assets/Client3_Book1.png" alt="Brie Mine 4Ever">
+                <h3>Brie Mine 4Ever</h3>
+                <p>A delectable symphony of romance and cheese that will melt your heart!</p>
+                <button onclick="addToCart('Brie Mine 4Ever')">Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="assets/Client3_Book2.png" alt="Glory Riders">
+                <h3>Glory Riders</h3>
+                <p>An awe-inspiring odyssey chronicling the indomitable spirit of bikers.</p>
+                <button onclick="addToCart('Glory Riders')">Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="assets/Client3_Book3.png" alt="Sorcerer's Shadowed Chronicles">
+                <h3>Sorcerer's Shadowed Chronicles</h3>
+                <p>A dark fantasy masterpiece where magic pulses with shadowy mystery.</p>
+                <button onclick="addToCart('Sorcerer\'s Shadowed Chronicles')">Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="assets/Client3_Magazine1.png" alt="Ball is the World in a Pickle?">
+                <h3>Ball is the World in a Pickle?</h3>
+                <p>Explore the growing sport with insider tips and interviews.</p>
+                <button onclick="addToCart('Ball is the World in a Pickle?')">Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="assets/Client3_Magazine2.png" alt="Travel Magazine">
+                <h3>Top 10 Places to Travel</h3>
+                <p>Explore the globe's most breathtaking destinations with expert travel tips and stunning photography!</p>
+                <button onclick="addToCart('Top 10 Places to Travel')">Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="assets/Client3_Magazine3.png" alt="Eat: Breakfast Edition">
+                <h3>Eat: Breakfast Edition</h3>
+                <p>Start your day right with delicious breakfast recipes and culinary inspiration from around the world!</p>
+                <button onclick="addToCart('Eat: Breakfast Edition')">Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="assets/Client3_Notebook.png" alt="Book Haven Notebook">
+                <h3>Book Haven Notebook</h3>
+                <p>Perfect for jotting down your next literary masterpiece or keeping track of your favorite books!</p>
+                <button onclick="addToCart('Book Haven Notebook')">Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="assets/Client3_Stickers.png" alt="Book Haven Stickers">
+                <h3>Book Haven Stickers</h3>
+            
+                <p>Show your local pride with these exclusive Book Haven stickers.</p>
+                <button onclick="addToCart('Book Haven Stickers')">Add to Cart</button>
+            </div>
+            <div class="book-item">
+                <img src="assets/Client3_ToteBag.png" alt="Book Haven Tote Bag">
+                <h3>Book Haven Tote Bag</h3>
+                <p>Carry your books in style with this durable and eco-friendly tote bag, a must-have for every reader!</p>
+                <button onclick="addToCart('Book Haven Tote Bag')">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <input type="email" id="footer-newsletter-email" placeholder="Enter your email">
+                <button id="footer-subscribe-btn">Subscribe</button>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="assets/facebook_Icon.png" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="assets/Instagram_Icon.png" alt="Instagram" class="social-icon"></a>
+                <a href="#"><img src="assets/twitter_icon.png" alt="Twitter" class="social-icon"></a>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="community.html">Community Corner</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    
+    <!-- Link JavaScript -->
+    <script src="main.js"></script>
+    
+    <!-- JavaScript to filter and display books dynamically in a grid -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the URL parameters
+            const params = new URLSearchParams(window.location.search);
+            const category = params.get("category");
+
+            // Updated books data with provided images
+            const books = [
+                { title: "Brie Mine 4Ever", category: "fiction", img: "assets/Client3_Book1.png" },
+                { title: "Glory Riders", category: "fiction", img: "assets/Client3_Book2.png" },
+                { title: "Sorcerer's Shadowed Chronicles", category: "fantasy", img: "assets/Client3_Book3.png" },
+                { title: "Ball: Is the World in a Pickle?", category: "magazine", img: "assets/Client3_Magazine1.png" },
+                { title: "Travel: Top 10 Places to Visit", category: "magazine", img: "assets/Client3_Magazine2.png" },
+                { title: "Eat: The Breakfast Issue", category: "magazine", img: "assets/Client3_Magazine3.png" },
+                { title: "Book Haven Pin", category: "merchandise", img: "assets/Client3_Notebook.png" },
+                { title: "Read Local Stickers", category: "merchandise", img: "assets/Client3_Stickers.png" },
+                { title: "Read Tote Bag", category: "merchandise", img: "assets/Client3_ToteBag.png" }
+            ];
+
+            // Get the gallery container
+            const galleryContainer = document.getElementById("gallery-container");
+
+            // Filter and display books based on the category
+            const filteredBooks = books.filter(book => !category || book.category === category);
+            galleryContainer.innerHTML = filteredBooks.map(book => `
+                <div class="book-item">
+                    <img src="${book.img}" alt="${book.title}">
+                    <p>${book.title}</p>
+                </div>
+            `).join('');
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
